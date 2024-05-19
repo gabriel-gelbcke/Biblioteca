@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 public class BibliotecaContext : DbContext
 {
@@ -9,6 +12,25 @@ public class BibliotecaContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlite("Data Source=banco.db");
+    }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<Emprestimo>()
+            .HasKey(e => e.Id); 
+
+        modelBuilder.Entity<Emprestimo>()
+            .HasOne(e => e.Livro)         
+            .WithMany()                     
+            .HasForeignKey(e => e.LivroId)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        modelBuilder.Entity<Emprestimo>()
+            .HasOne(e => e.Usuario)
+            .WithMany()
+            .HasForeignKey(e => e.UsuarioId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

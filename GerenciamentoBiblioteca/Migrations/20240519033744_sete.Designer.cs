@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciamentoBiblioteca.Migrations
 {
     [DbContext(typeof(BibliotecaContext))]
-    partial class BibliotecaContextModelSnapshot : ModelSnapshot
+    [Migration("20240519033744_sete")]
+    partial class sete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
@@ -22,15 +25,19 @@ namespace GerenciamentoBiblioteca.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DataDevolucao")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DataEmprestimo")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LivroId")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("UsuarioId")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -52,9 +59,6 @@ namespace GerenciamentoBiblioteca.Migrations
 
                     b.Property<string>("Autor")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("QuantidadeLivro")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");
@@ -85,12 +89,14 @@ namespace GerenciamentoBiblioteca.Migrations
                     b.HasOne("Livro", "Livro")
                         .WithMany()
                         .HasForeignKey("LivroId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
 
                     b.HasOne("Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
 
                     b.Navigation("Livro");
 
