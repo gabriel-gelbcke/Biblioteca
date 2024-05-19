@@ -1,0 +1,15 @@
+###
+GET http://localhost:5291/api/livros/listar
+
+###
+POST http://localhost:5291/api/livro/cadastrar
+Content-Type: application/json
+
+{
+    "titulo" : "Pequeno Principe",
+    "autor": "Cleiton Rasta",
+    "anopublicacao" : 2023
+    
+}
+###
+DELETE http://localhost:5291/api/livro/deletar/7199dc9a-854d-48af-bd91-fd5513519912
