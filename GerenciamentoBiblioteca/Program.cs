@@ -50,4 +50,19 @@ app.MapDelete("/api/livro/deletar/{id}", ([FromRoute] string Id, [FromServices] 
 
 });
 
+app.MapPost("/api/usuario/cadastrar", ([FromBody] Usuario usuario, [FromServices] BibliotecaContext banco) =>
+{
+    Livro? livroBusca = banco.Livros.FirstOrDefault(u => u.Id == usuario.Id);
+
+    if(livroBusca == null){
+
+        banco.Usuarios.Add(usuario);
+        banco.SaveChanges();
+        return Results.Created($"/livros/buscar/{usuario.Id}", usuario);
+
+    }
+    return Results.BadRequest("Já existe um usuario cadastrado com esse ID!"); 
+
+});
+
 app.Run();

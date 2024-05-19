@@ -3005,19 +3005,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\antonio\\.nuget\\packages\\": {}
+    "C:\\Users\\Gabreu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\antonio\\Desktop\\Projeto\\GerenciamentoBiBlioteca\\GerenciamentoBiblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
       "projectName": "GerenciamentoBiblioteca",
-      "projectPath": "C:\\Users\\antonio\\Desktop\\Projeto\\GerenciamentoBiBlioteca\\GerenciamentoBiblioteca.csproj",
-      "packagesPath": "C:\\Users\\antonio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\antonio\\Desktop\\Projeto\\GerenciamentoBiBlioteca\\obj\\",
+      "projectPath": "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
+      "packagesPath": "C:\\Users\\Gabreu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\antonio\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Gabreu\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3084,7 +3084,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
