@@ -1,5 +1,17 @@
 ### LISTAR LIVROS
-GET http://localhost:5291/api/livros/listar
+# GET http://localhost:5291/api/livros/listar
+
+###
+fetch('http://localhost:5291/api/livros/listar', {
+  method: 'GET',
+  mode: 'no-cors'
+})
+  .then(response => {
+    // Processar a resposta
+  })
+  .catch(error => {
+    // Lidar com o erro
+  });
 
 ### LISTAR USUARIOS
 GET http://localhost:5291/api/usuarios/listar
@@ -12,10 +24,10 @@ POST http://localhost:5291/api/livro/cadastrar
 Content-Type: application/json
 
 {
-    "titulo" : "Diário de um Banana: 4",
-    "quantidadelivro" : 3,
-    "autor": "Jeff Kinney",
-    "anopublicacao" : 2016
+    "titulo" : "As Aventuras do Antonio",
+    "quantidadelivro" : 35,
+    "autor": "Gabriel",
+    "anopublicacao" : 2010
     
 }
 

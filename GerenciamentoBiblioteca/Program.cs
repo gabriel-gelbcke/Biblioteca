@@ -2,15 +2,36 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
-
+// Adiciona serviços ao contêiner
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BibliotecaContext>();
 
+// Configuração do CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Bem-vindo à API de Gerenciamento de Biblioteca");
+// Middleware
+app.UseHttpsRedirection();
 
+app.UseCors("AllowAll"); // Adicione esta linha para usar a política de CORS
+
+app.UseAuthorization();
+
+app.MapControllers(); // Certifique-se de que este middleware está presente
+
+app.MapGet("/", () => "Bem-vindo à API de Gerenciamento de Biblioteca");
 
 ////// LIVRO //////
 app.MapPost("/api/livro/cadastrar", ([FromBody] Livro livro, [FromServices] BibliotecaContext banco) =>
@@ -18,14 +39,11 @@ app.MapPost("/api/livro/cadastrar", ([FromBody] Livro livro, [FromServices] Bibl
     Livro? livroBusca = banco.Livros.FirstOrDefault(u => u.Id == livro.Id);
 
     if(livroBusca == null){
-
         banco.Livros.Add(livro);
         banco.SaveChanges();
         return Results.Created($"/livros/buscar/{livro.Id}", livro);
-
     }
     return Results.BadRequest("Já existe um livro cadastrado com esse ID!"); 
-
 });
 
 app.MapGet("/api/livros/listar", ([FromServices] BibliotecaContext banco) =>
@@ -35,7 +53,6 @@ app.MapGet("/api/livros/listar", ([FromServices] BibliotecaContext banco) =>
         return Results.Ok(banco.Livros.ToList());
     }
     return Results.NotFound("Não existem livros na tabela");
-
 });
 
 app.MapDelete("/api/livro/deletar/{id}", ([FromRoute] string Id, [FromServices] BibliotecaContext banco) => 
@@ -43,15 +60,11 @@ app.MapDelete("/api/livro/deletar/{id}", ([FromRoute] string Id, [FromServices] 
     Livro? livroBusca = banco.Livros.FirstOrDefault(u => u.Id == Id);
 
     if(livroBusca != null){
-
         banco.Livros.Remove(livroBusca);
         banco.SaveChanges();
         return Results.Created($"/livros/buscar/{Id}", livroBusca);
-
     }
     return Results.BadRequest("Livro não encontrado!"); 
-
-
 });
 
 ////// USUARIO //////
@@ -60,17 +73,12 @@ app.MapPost("/api/usuario/cadastrar", ([FromBody] Usuario usuario, [FromServices
     Usuario? usuarioBusca = banco.Usuarios.FirstOrDefault(u => u.Id == usuario.Id);
 
     if(usuarioBusca == null){
-
         banco.Usuarios.Add(usuario);
         banco.SaveChanges();
         return Results.Created($"/usuario/buscar/{usuario.Id}", usuario);
-
     }
     return Results.BadRequest("Já existe um usuario cadastrado com esse ID!"); 
-
 });
-
-
 
 app.MapGet("/api/usuarios/listar", ([FromServices] BibliotecaContext banco) =>
 {
@@ -79,7 +87,6 @@ app.MapGet("/api/usuarios/listar", ([FromServices] BibliotecaContext banco) =>
         return Results.Ok(banco.Usuarios.ToList());
     }
     return Results.NotFound("Não existem usuarios na tabela");
-
 });
 
 app.MapDelete("/api/usuario/deletar/{id}", ([FromRoute] string Id, [FromServices] BibliotecaContext banco) => 
@@ -96,16 +103,13 @@ app.MapDelete("/api/usuario/deletar/{id}", ([FromRoute] string Id, [FromServices
         banco.Usuarios.Remove(usuarioBusca);
         banco.SaveChanges();
         return Results.Created($"/usuarios/buscar/{Id}", usuarioBusca);
-
     }
     return Results.BadRequest("Usuario não encontrado!"); 
-
 });
 
 app.MapPut("/api/usuario/alterar/{id}", async ([FromRoute] string id, [FromBody] Usuario usuarioAtualizado, [FromServices] BibliotecaContext banco) =>
 {
     var usuarioBusca = await banco.Usuarios.FindAsync(id);
-    
 
     if (usuarioBusca == null)
     {
@@ -119,7 +123,6 @@ app.MapPut("/api/usuario/alterar/{id}", async ([FromRoute] string id, [FromBody]
 
     return Results.Ok(usuarioBusca);
 });
-
 
 ////// EMPRESTIMO //////
 app.MapPost("/api/emprestimo/cadastrar", async ([FromBody] Emprestimo emprestimo, [FromServices] BibliotecaContext banco) =>
@@ -146,7 +149,6 @@ app.MapPost("/api/emprestimo/cadastrar", async ([FromBody] Emprestimo emprestimo
     }
     
     if(emprestimoBusca == null){
-
         emprestimo.Livro = banco.Livros.Find(emprestimo.LivroId);
         emprestimo.Usuario = banco.Usuarios.Find(emprestimo.UsuarioId);
 
@@ -163,10 +165,8 @@ app.MapPost("/api/emprestimo/cadastrar", async ([FromBody] Emprestimo emprestimo
         banco.Emprestimos.Add(emprestimo);
         banco.SaveChanges();
         return Results.Created($"/emprestimo/buscar/{emprestimo.Id}", emprestimo);
-
     }
     return Results.BadRequest("Já existe um emprestimo cadastrado com esse ID!"); 
-
 });
 
 app.MapGet("/api/emprestimos/listar", ([FromServices] BibliotecaContext banco) =>
@@ -181,7 +181,6 @@ app.MapGet("/api/emprestimos/listar", ([FromServices] BibliotecaContext banco) =
         return Results.Ok(emprestimos);
     }
     return Results.NotFound("Não existem empréstimos na tabela");
-
 });
 
 app.MapDelete("/api/emprestimo/deletar/{id}", ([FromRoute] string Id, [FromServices] BibliotecaContext banco) => 
@@ -189,14 +188,11 @@ app.MapDelete("/api/emprestimo/deletar/{id}", ([FromRoute] string Id, [FromServi
     Emprestimo? emprestimoBusca = banco.Emprestimos.FirstOrDefault(u => u.Id == Id);
 
     if(emprestimoBusca != null){
-
         banco.Emprestimos.Remove(emprestimoBusca);
         banco.SaveChanges();
         return Results.Created($"/emprestimos/buscar/{Id}", emprestimoBusca);
-
     }
     return Results.BadRequest("Emprestimo não encontrado!"); 
-
 });
 
 app.MapDelete("/api/usuario/deletartudo", ([FromServices] BibliotecaContext banco) =>
@@ -228,7 +224,5 @@ app.MapDelete("/api/livro/deletartudo", ([FromServices] BibliotecaContext banco)
 
     return Results.Ok("Todos os livros foram deletados.");
 });
-
-
 
 app.Run();
