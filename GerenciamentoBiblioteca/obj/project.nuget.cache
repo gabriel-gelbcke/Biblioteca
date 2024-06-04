@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zbs8QPg93lNYgE6usaRzz76+LuNL9rjRvhWolbwreWW79kQIyuGok36V5jUy3KjvD2bv9yf8uv8FIIZuEvqT3w==",
+  "dgSpecHash": "3WdKLxGMvetkqHPwOZ5kcP68su0bybCY3QBxgPyNoJ+djwD/66WlcRhrIAfYDUT1Z4Vqf5monysgNHd7RLc67A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\autologon\\Desktop\\projetos\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
+  "projectFilePath": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\autologon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\autologon\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\autologon\\Desktop\\projetos\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {}
+    "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\autologon\\Desktop\\projetos\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {
+    "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\autologon\\Desktop\\projetos\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
         "projectName": "GerenciamentoBiblioteca",
-        "projectPath": "C:\\Users\\autologon\\Desktop\\projetos\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
+        "projectPath": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
         "packagesPath": "C:\\Users\\autologon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\autologon\\Desktop\\projetos\\GerenciamentoBiblioteca\\obj\\",
+        "outputPath": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

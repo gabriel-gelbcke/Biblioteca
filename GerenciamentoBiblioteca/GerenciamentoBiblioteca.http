@@ -1,7 +1,7 @@
 ### LISTAR LIVROS
 # GET http://localhost:5291/api/livros/listar
 
-###
+### LISTAR LIVROS APLICAÇÃO
 fetch('http://localhost:5291/api/livros/listar', {
   method: 'GET',
   mode: 'no-cors'
@@ -24,10 +24,10 @@ POST http://localhost:5291/api/livro/cadastrar
 Content-Type: application/json
 
 {
-    "titulo" : "As Aventuras do Antonio",
-    "quantidadelivro" : 35,
-    "autor": "Gabriel",
-    "anopublicacao" : 2010
+    "titulo" : "Frozen 2",
+    "quantidadelivro" : 19,
+    "autor": "Antonio",
+    "anopublicacao" : 2012
     
 }
 
@@ -46,8 +46,8 @@ POST http://localhost:5291/api/emprestimo/cadastrar
 Content-Type: application/json
 
 {
-    "livroId": "f372370b-47cc-4d6d-97d3-73cc68977b62",
-    "usuarioId" : "6cf4761b-ae90-4f30-b71e-57f83e3e2e09",
+    "livroId": "43f3e5a9-8909-49d2-9a31-de5a8fea9714",
+    "usuarioId" : "3394f6ba-5b07-4f6e-986a-b62bc735161d",
     "dataemprestimo" : "18/05/2024",
     "datadevolucao" : "25/05/2024"
 }
@@ -66,10 +66,10 @@ Content-Type: application/json
 DELETE http://localhost:5291/api/livro/deletar/10899f6e-2f9a-4553-ac69-efcbc7722847
 
 ### DELETAR USUARIO
-DELETE http://localhost:5291/api/usuario/deletar/fa5e91fe-911d-4881-ad35-0b8d5bcc10aa
+DELETE http://localhost:5291/api/usuario/deletar/6cf4761b-ae90-4f30-b71e-57f83e3e2e09
 
 ### DELETAR EMPRESTIMO
-DELETE http://localhost:5291/api/emprestimo/deletar/2b6fa79b-52b6-4dac-bd64-0c0f08f808a1
+DELETE http://localhost:5291/api/emprestimo/deletar/39a4cd68-32aa-4abb-9432-894a60cf68ca
 
 ### DELETAR TODOS OS EMPRESTIMOS
 DELETE http://localhost:5291/api/emprestimo/deletartudo
