@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: grey;
+}
+
+html{
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.listarLivros{
+  padding-left: 30px;
+  margin-top: 65px;
+  padding-right: 30px;
+}
+
+.card{
+  width: 18rem;
+}
+
+.livro{
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.hr{
+  width: 370px;
+  left: 5px;
+  position: absolute;
+}
+
+.navbar-brand{
+  user-select: none;
+  font-size: 25px;
+}
+
+.ID{
+  width: 25%;
+}
+
+.TITULO{
+  width: 15%;
+}
+
+.AUTOR{
+  width: 15%;
+}
+
+.ANO{
+  width: 15%;
+}
+
+.QUANTIDADE{
+  width: 15%;
+}
+
+/* .ALTERAR{
+  width: 2%;
+} */
+
+.TituloListar{
+  background-color: #343a40;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.TituloListarLivros{
+  user-select: none;
+  cursor: pointer;
+  color: #004cff !important;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.1s;
+  margin-right: 50px;
+}
+
+.TituloListarLivros:hover{
+  color: #007bff !important;
+  transition: 0.1s;
+}
+
+table{
+  border-radius: 0px 0px 10px 10px;
+}
+
+table:last-child tr{
+  border-radius: 0px 0px 10px 10px;
+}
+
+.table thead th {
+  border-bottom: none;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+  border-bottom: 1px solid #454d55 !important;
+  border-top: 1px solid #454d55 !important;
+}
+
+.nav-link{
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.imgIcon{
+  height: 20px;
+  user-select: none;
+  cursor: pointer;
+}
