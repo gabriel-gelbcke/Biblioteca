@@ -16,9 +16,18 @@ code {
 }
 
 .listarLivros{
-  padding-left: 30px;
-  margin-top: 65px;
-  padding-right: 30px;
+  margin-top: 110px;
+}
+
+.content-livros{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.box-livros{
+  width: 75%;
 }
 
 .card{
@@ -62,37 +71,53 @@ code {
   width: 15%;
 }
 
-/* .ALTERAR{
-  width: 2%;
-} */
-
 .TituloListar{
-  background-color: #343a40;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
+  margin-bottom: 35px;
+  gap: 50px;
 }
 
-.TituloListarLivros{
+.TituloListar a{
+  color: white;
+  background-color: #343a40;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
   user-select: none;
   cursor: pointer;
-  color: #004cff !important;
   font-weight: bold;
   font-size: 30px;
-  transition: 0.1s;
-  margin-right: 50px;
+  transition: 0.1s; 
 }
 
-.TituloListarLivros:hover{
+.link1{
+  color: #007bff !important;
+}
+
+.link1:hover{
   color: #007bff !important;
   transition: 0.1s;
+  text-decoration: none;
+}
+
+.link2{
+  color: white !important;
+}
+
+.link2:hover{
+  color: #51a5ff !important;
+  transition: 0.1s;
+  text-decoration: none;
 }
 
 table{
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  border-collapse: unset;
 }
 
 table:last-child tr{
@@ -103,9 +128,25 @@ table:last-child tr{
   border-bottom: none;
 }
 
+.table thead th:first-child{
+  border-radius: 10px 0px 0px 0px;
+}
+
+.table thead th:last-child{
+  border-radius: 0px 10px 0px 0px;
+}
+
+.table tbody:last-child th:first-child{
+  border-radius: 0px 0px 0px 10px;
+}
+
+.table tbody:last-child td:last-child{
+  border-radius: 0px 0px 10px 0px;
+}
+
 .table-dark td, .table-dark th, .table-dark thead th {
-  border-bottom: 1px solid #454d55 !important;
-  border-top: 1px solid #454d55 !important;
+  border-top: none;
+  vertical-align: middle;
 }
 
 .nav-link{
@@ -114,7 +155,13 @@ table:last-child tr{
 }
 
 .imgIcon{
-  height: 20px;
+  height: 27px;
   user-select: none;
   cursor: pointer;
+}
+
+.imgDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {}
+    "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {
+    "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
         "projectName": "GerenciamentoBiblioteca",
-        "projectPath": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
-        "packagesPath": "C:\\Users\\autologon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\autologon\\Desktop\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\obj\\",
+        "projectPath": "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\GerenciamentoBiblioteca.csproj",
+        "packagesPath": "C:\\Users\\Gabreu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabreu\\Pictures\\projeto final c#\\Projeto-Final-Topicos-Especiais-em-Sistemas\\GerenciamentoBiblioteca\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\autologon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Gabreu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -90,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Livro } from '../../../Models/Livro';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 function LivroListar() {
     const [livros, setLivros] = useState<Livro[]>([]);
@@ -7,6 +8,7 @@ function LivroListar() {
 
     useEffect(() => {
         console.log("Executar algo ao carregar o componente...");
+        carregarDados();
     }, []);
 
     const carregarDados = async () => {
@@ -25,15 +27,17 @@ function LivroListar() {
 
     return (
         <div className='listarLivros'>
-            {/* <h1>Listar livros</h1> */}
-            <br /><br />
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <div>
             
             <div className='TituloListar'>
-                <a className='TituloListarLivros' onClick={carregarDados}>LISTAR</a>
-                <a className='TituloListarLivros' onClick={carregarDados}>CADASTRAR</a>
+                <Link className='link1' to="/livros/listar"><a className='link1' onClick={carregarDados}>LISTAR</a></Link>
+                <Link className='link2' to="/livros/cadastrar"><a className='link2' onClick={carregarDados}>CADASTRAR</a></Link>
             </div>
+
+            <div className="content-livros">
+
+                <div className="box-livros">
 
             <table className="table table-striped table-dark">
                     <thead>
@@ -58,13 +62,45 @@ function LivroListar() {
                         <td>{livro.anoPublicacao}</td>
                         <td>{livro.quantidadeLivro}</td>
                         
-                        <td><img className='imgIcon' src="https://img.icons8.com/?size=100&id=15042&format=png&color=FA5252" alt="" /></td>
-                        <td><img className='imgIcon' src="https://img.icons8.com/?size=100&id=99961&format=png&color=FA5252" alt="" /></td>
+                        <td><div className="imgDiv"><img className='imgIcon' src="https://img.icons8.com/?size=100&id=15042&format=png&color=FA5252" alt="" /></div></td>
+                        <td><div className="imgDiv"><img className='imgIcon' src="https://img.icons8.com/?size=100&id=99961&format=png&color=FA5252" alt="" /></div></td>
                       </tr>
                     </tbody>
                     )}
                     </table>
-                <br />
+
+                    
+
+
+<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+
+<div className="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered" role="document">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+        ...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                    </div>
+
+                    </div>
+                
             </div>
         </div>
     );

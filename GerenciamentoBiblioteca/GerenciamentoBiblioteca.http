@@ -13,6 +13,18 @@ fetch('http://localhost:5291/api/livros/listar', {
     // Lidar com o erro
   });
 
+### LISTAR USUARIOS APLICAÇÃO
+fetch('http://localhost:5291/api/usuarios/listar', {
+  method: 'GET',
+  mode: 'no-cors'
+})
+  .then(response => {
+    // Processar a resposta
+  })
+  .catch(error => {
+    // Lidar com o erro
+  });
+
 ### LISTAR USUARIOS
 GET http://localhost:5291/api/usuarios/listar
 
@@ -54,6 +66,15 @@ Content-Type: application/json
 
 ### ALTERAR USUARIO
 PUT http://localhost:5291/api/usuario/alterar/f1f28d1a-f612-47dc-8538-6e4d5a307913
+Content-Type: application/json
+
+{
+    "nome": "Cleyton",
+    "email" : "Cleyton@gmail.com"
+    
+}
+
+PUT http://localhost:5291/api/usuario/alterar/{id}
 Content-Type: application/json
 
 {

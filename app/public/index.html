@@ -12,6 +12,12 @@
     <title>React App</title>
   </head>
   <body>
+    <script>
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+  </script>
+
     <div id="root"></div>
   </body>
 </html>
