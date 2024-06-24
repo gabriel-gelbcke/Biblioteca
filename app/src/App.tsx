@@ -27,6 +27,7 @@ function App() {
 
         <Route path="*" element={<Navigate to="/livros/listar" replace />} />
       </Routes>
+      
     </div>
     </BrowserRouter>
   );

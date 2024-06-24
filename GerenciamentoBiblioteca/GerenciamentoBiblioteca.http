@@ -2,31 +2,31 @@
 # GET http://localhost:5291/api/livros/listar
 
 ### LISTAR LIVROS APLICAÇÃO
-fetch('http://localhost:5291/api/livros/listar', {
-  method: 'GET',
-  mode: 'no-cors'
-})
-  .then(response => {
-    // Processar a resposta
-  })
-  .catch(error => {
-    // Lidar com o erro
-  });
+# fetch('http://localhost:5291/api/livros/listar', {
+#   method: 'GET',
+#   mode: 'no-cors'
+# })
+#   .then(response => {
+#     // Processar a resposta
+#   })
+#   .catch(error => {
+#     // Lidar com o erro
+#   });
 
 ### LISTAR USUARIOS APLICAÇÃO
-fetch('http://localhost:5291/api/usuarios/listar', {
-  method: 'GET',
-  mode: 'no-cors'
-})
-  .then(response => {
-    // Processar a resposta
-  })
-  .catch(error => {
-    // Lidar com o erro
-  });
+# fetch('http://localhost:5291/api/usuarios/listar', {
+#   method: 'GET',
+#   mode: 'no-cors'
+# })
+#   .then(response => {
+#     // Processar a resposta
+#   })
+#   .catch(error => {
+#     // Lidar com o erro
+#   });
 
 ### LISTAR USUARIOS
-GET http://localhost:5291/api/usuarios/listar
+GET http://localhost:5291/api/livros/listar
 
 ### LISTAR EMPRESTIMOS
 GET http://localhost:5291/api/emprestimos/listar
@@ -36,7 +36,19 @@ POST http://localhost:5291/api/livro/cadastrar
 Content-Type: application/json
 
 {
-    "titulo" : "Frozen 2",
+    "titulo" : "",
+    "quantidadelivro" : 19,
+    "autor": "Antonio",
+    "anopublicacao" : 2012
+    
+}
+
+### ALTERAR LIVRO
+PUT http://localhost:5291/api/livro/alterar/f372370b-47cc-4d6d-97d3-73cc68977b62
+Content-Type: application/json
+
+{
+    "titulo" : "Diário de um Banana: 40000000",
     "quantidadelivro" : 19,
     "autor": "Antonio",
     "anopublicacao" : 2012
@@ -84,7 +96,7 @@ Content-Type: application/json
 }
 
 ### DELETAR LIVRO
-DELETE http://localhost:5291/api/livro/deletar/10899f6e-2f9a-4553-ac69-efcbc7722847
+DELETE http://localhost:5291/api/livro/deletar/10899f6e-2f9a-4553-ac69-efcbc7722847 
 
 ### DELETAR USUARIO
 DELETE http://localhost:5291/api/usuario/deletar/6cf4761b-ae90-4f30-b71e-57f83e3e2e09

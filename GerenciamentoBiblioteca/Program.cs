@@ -38,6 +38,10 @@ app.MapPost("/api/livro/cadastrar", ([FromBody] Livro livro, [FromServices] Bibl
 {
     Livro? livroBusca = banco.Livros.FirstOrDefault(u => u.Id == livro.Id);
 
+    if (livro.Titulo.Length <= 0 || livro.Autor.Length <= 0 || livro.AnoPublicacao <= 1 || livro.QuantidadeLivro <= 1){
+        return Results.BadRequest("Algo deu errado no cadastro!");
+    }
+
     if(livroBusca == null){
         banco.Livros.Add(livro);
         banco.SaveChanges();
@@ -65,6 +69,25 @@ app.MapDelete("/api/livro/deletar/{id}", ([FromRoute] string Id, [FromServices] 
         return Results.Created($"/livros/buscar/{Id}", livroBusca);
     }
     return Results.BadRequest("Livro não encontrado!"); 
+});
+
+app.MapPut("/api/livro/alterar/{id}", async ([FromRoute] string id, [FromBody] Livro livroAtualizado, [FromServices] BibliotecaContext banco) =>
+{
+    var livroBusca = await banco.Livros.FindAsync(id);
+
+    if (livroBusca == null)
+    {
+        return Results.NotFound("Livro não encontrado");
+    }
+
+    livroBusca.Titulo = livroAtualizado.Titulo;
+    livroBusca.Autor = livroAtualizado.Autor;
+    livroBusca.QuantidadeLivro = livroAtualizado.QuantidadeLivro;
+    livroBusca.AnoPublicacao = livroAtualizado.AnoPublicacao;
+
+    await banco.SaveChangesAsync();
+
+    return Results.Ok(livroBusca);
 });
 
 ////// USUARIO //////
@@ -226,3 +249,37 @@ app.MapDelete("/api/livro/deletartudo", ([FromServices] BibliotecaContext banco)
 });
 
 app.Run();
+
+//Criar API
+
+// dotnet new webapi --name primeiroapp 
+
+// Linkar database entity framework
+
+// dotnet add package Microsoft.EntityFrameworkCore.Sqlite 
+
+// dotnet add package Microsoft.EntityFrameworkCore.Design 
+
+// dotnet restore (restaura a saude das bibliotc) 
+
+// dotnet tool install --global dotnet-ef 
+
+// Criar banco de dados
+
+// dotnet ef migrations add CreateDatabase 
+
+// dotnet ef database update 
+
+// Se nao der certo 
+
+// dotnet tool install --global dotnet-ef 
+
+// dotnet ef migrations add Initial 
+
+// dotnet ef database update 
+
+// Visual api c#
+
+// Criar front 
+
+// npx create-react-app meuapp --template typescript 
