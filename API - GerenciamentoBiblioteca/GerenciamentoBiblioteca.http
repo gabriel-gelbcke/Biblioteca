@@ -1,0 +1,90 @@
+### LISTAR LIVROS
+GET http://localhost:5291/api/livros/listar
+
+### LISTAR USUARIOS
+GET http://localhost:5291/api/usuarios/listar 
+
+### LISTAR EMPRESTIMOS
+GET http://localhost:5291/api/emprestimos/listar
+
+### CADASTRAR LIVRO
+POST http://localhost:5291/api/livro/cadastrar
+Content-Type: application/json
+
+{
+    "titulo" : "",
+    "quantidadelivro" : 19,
+    "autor": "Antonio",
+    "anopublicacao" : 2012
+    
+}
+
+### ALTERAR LIVRO
+PUT http://localhost:5291/api/livro/alterar/f372370b-47cc-4d6d-97d3-73cc68977b62
+Content-Type: application/json
+
+{
+    "titulo" : "Diário de um Banana: 40000000",
+    "quantidadelivro" : 19,
+    "autor": "Antonio",
+    "anopublicacao" : 2012
+    
+}
+
+### CADASTRAR USUARIO
+POST http://localhost:5291/api/usuario/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Antonio",
+    "email" : "antonio@gmail.com"
+    
+}
+
+### CADASTRAR EMPRESTIMO
+POST http://localhost:5291/api/emprestimo/cadastrar
+Content-Type: application/json
+
+{
+    "livroId": "92367288-f545-42ca-bf25-53937b65e18a",
+    "usuarioId" : "5f6e3230-de6d-49d6-8578-5a7ff3820ec9",
+    "dataemprestimo" : "18/05/2024",
+    "datadevolucao" : "25/05/2024"
+}
+
+### ALTERAR USUARIO
+PUT http://localhost:5291/api/usuario/alterar/f1f28d1a-f612-47dc-8538-6e4d5a307913
+Content-Type: application/json
+
+{
+    "nome": "Cleyton",
+    "email" : "Cleyton@gmail.com"
+    
+}
+
+PUT http://localhost:5291/api/usuario/alterar/{id}
+Content-Type: application/json
+
+{
+    "nome": "Cleyton",
+    "email" : "Cleyton@gmail.com"
+    
+}
+
+### DELETAR LIVRO
+DELETE http://localhost:5291/api/usuario/deletar/86633d57-3f39-4c68-8e1b-0c86e8fb837d
+
+### DELETAR USUARIO
+DELETE http://localhost:5291/api/usuario/deletar/86633d57-3f39-4c68-8e1b-0c86e8fb837d
+
+### DELETAR EMPRESTIMO
+DELETE http://localhost:5291/api/emprestimo/deletar/39a4cd68-32aa-4abb-9432-894a60cf68ca
+
+### DELETAR TODOS OS EMPRESTIMOS
+DELETE http://localhost:5291/api/emprestimo/deletartudo
+
+### DELETAR TODOS OS USUARIOS
+DELETE http://localhost:5291/api/usuario/deletartudo
+
+### DELETAR TODOS OS LIVROS
+DELETE http://localhost:5291/api/livro/deletartudo
