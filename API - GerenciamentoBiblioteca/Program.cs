@@ -39,7 +39,7 @@ app.MapPost("/api/livro/cadastrar", ([FromBody] Livro livro, [FromServices] Bibl
 {
     Livro? livroBusca = banco.Livros.FirstOrDefault(u => u.Id == livro.Id);
 
-    if (livro.Titulo.Length <= 0 || livro.Autor.Length <= 0 || livro.AnoPublicacao <= 1 || livro.QuantidadeLivro <= 1){
+    if (livro.Titulo.Length <= 0 || livro.Autor.Length <= 0 || livro.AnoPublicacao < 1 || livro.QuantidadeLivro < 1){
         return Results.BadRequest("Algo deu errado no cadastro!");
     }
 

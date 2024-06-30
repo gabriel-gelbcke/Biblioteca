@@ -16,7 +16,7 @@ function UsuarioExcluir() {
 
     const excluirDados = async () => {
         try {
-            const url = `http://localhost:5291/api/emprestimo/deletar/${id}`;
+            const url = `http://localhost:5291/api/usuario/deletar/${id}`;
             const resposta = await fetch(url, {
                 method: 'DELETE',
                 headers: {
